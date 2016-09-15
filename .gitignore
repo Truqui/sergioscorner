@@ -87,3 +87,11 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Eclipse
+.project
+.pydevproject
+
+# Secret settings
+sergioscorner/sergioscorner/projects_settings/secret.py
+
