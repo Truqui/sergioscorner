@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<header>
+				</header>	
+			</div>
+			<div class="row">
+				<section>
+					{% block content %}{% endblock %}
+				</section>
+			</div>
+			<footer>
+				<div class="row">
+					<p>Sergio's Corner</p>
+				</div>
+			</footer>
+		</div>
+	    {% block javascripts %}{% endblock %}
+	</body>
+</html>
