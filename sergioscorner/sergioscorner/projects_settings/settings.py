@@ -23,16 +23,15 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
-# THIRD_PARTY_APPS = (
-#
-# )
+THIRD_PARTY_APPS = (
+    'sitetree',
+)
 
 CUSTOM_APPS = (
     'page',
 )
 
-# INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
-INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
