@@ -1,3 +1,4 @@
+{% load sitetree %}
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
@@ -8,6 +9,7 @@
 		<div class="container">
 			<div class="row">
 				<header>
+					{% sitetree_menu from "mainmenu" include "trunk,topmenu" %}
 				</header>	
 			</div>
 			<div class="row">
