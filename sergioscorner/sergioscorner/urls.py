@@ -16,7 +16,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from blog.views import ListArticlesView
+
 urlpatterns = [
-    url(r'^', include('page.urls', namespace='page')),
+    url(r'^$', ListArticlesView.as_view(), name="home"),
     url(r'^admin/', admin.site.urls),
 ]

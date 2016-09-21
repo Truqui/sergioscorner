@@ -10,18 +10,34 @@ section {
     border-style: solid;
     border-width: 1px;
     border-color: #FE9A2E;
+    padding: 10px 40px 25px 40px;
 }
+
+
+/* ARTICLES */
+article p.readmore {
+	padding-top: 10px;
+}
+
+article footer p {
+	color: #CCC;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 
 /* CUSTOM NAVBAR */
 ul.navbar-nav {
     width: 100%;
     text-align: center;
-  }
+}
 
 .navbar-nav li {
 	float: none;
     display: inline-block;
 }
+
 /* NAVBAR GENERATOR */
 .navbar-default {
   background-color: #333333;
