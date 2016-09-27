@@ -3,9 +3,9 @@
 {% block content %}
 	{% for article in object_list %}
 		<article>
-			<H1>{{ article.title }} </H1>
+			<h1><a href="/{{ article.slug }}">{{ article.title }}</a></h1>
 			{{ article.introduction|safe }}
-			<p class='readmore'>Read more<p>
+			<p class='readmore'><a href="/{{ article.slug }}">Read more</a><p>
 			<footer>
 				<p>
 					Published on {{ article.creation_date }} 
@@ -18,6 +18,7 @@
 			</footer>
 		</article>
 	{% empty %}
-		<p>At this time, there are no published articles.</p>
+		<h1>Sorry</h1>
+		<p>At this time, we don't have published articles.</p>
 	{% endfor %}	
 {% endblock %}

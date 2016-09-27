@@ -38,6 +38,10 @@ ul.navbar-nav {
     display: inline-block;
 }
 
+.navbar-nav li .dropdown-menu {
+	border-bottom-color: #FE9A2E;
+}
+
 /* NAVBAR GENERATOR */
 .navbar-default {
   background-color: #333333;
