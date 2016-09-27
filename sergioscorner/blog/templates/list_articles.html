@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% for article in object_list %}
+		<article>
+			<h1><a href="/{{ article.slug }}">{{ article.title }}</a></h1>
+			{{ article.introduction|safe }}
+			<p class='readmore'><a href="/{{ article.slug }}">Read more</a><p>
+			<footer>
+				<p>
+					Published on {{ article.creation_date }} 
+					{% if article.is_updated %}
+					Last update on {{ article.last_update_date }}
+					{% endif %}
+					<br>
+					Categories: {{ article.get_categories }}.
+				</p>
+			</footer>
+		</article>
+	{% empty %}
+		<h1>Sorry</h1>
+		<p>At this time, we don't have published articles.</p>
+	{% endfor %}	
+{% endblock %}

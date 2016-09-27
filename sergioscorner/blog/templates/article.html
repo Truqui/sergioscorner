@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<article>
+		<h1>{{ object.title }} </h1>
+		{{ object.introduction|safe }}
+		{{ object.text|safe }}
+		<footer>
+			<p>
+				Published on {{ object.creation_date }} 
+				{% if article.is_updated %}
+				Last update on {{ object.last_update_date }}
+				{% endif %}
+				<br>
+				Categories: {{ object.get_categories }}.
+			</p>
+		</footer>
+	</article>	
+{% endblock %}
