@@ -11,6 +11,13 @@ class AllArticlesListView(ListView):
     template_name = 'list_articles.html'
     ordering = '-creation_date'
 
+    def get_context_data(self, **kwargs):
+        context = super(AllArticlesListView, self).get_context_data(**kwargs)
+        context['title_tag'] = "Home"
+        context['description_tag'] = "Personal space focused on Django, " + \
+            "Python and Best Practices. By Sergio González Cruz."
+        return context
+
 
 class CategoryArticlesListView(ListView):
     model = Article
@@ -18,14 +25,31 @@ class CategoryArticlesListView(ListView):
 
     def get_queryset(self):
         try:
-            category = Category.objects.get(slug=self.kwargs['category'])
+            self.category = Category.objects.get(
+                slug=self.kwargs['category_slug']
+            )
         except ObjectDoesNotExist:
             raise Http404('Category does not exist')
+
         return Article.objects.filter(
-            categories__in=(category,),
+            categories__in=(self.category,),
         ).order_by('-creation_date')
+
+    def get_context_data(self, **kwargs):
+        context = super(
+            CategoryArticlesListView, self
+        ).get_context_data(**kwargs)
+        context['title_tag'] = self.category.title_tag
+        context['description_tag'] = self.category.description_tag
+        return context
 
 
 class ArticleDetailsView(DetailView):
     model = Article
     template_name = 'article.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDetailsView, self).get_context_data(**kwargs)
+        context['title_tag'] = self.object.title_tag
+        context['description_tag'] = self.object.description_tag
+        return context

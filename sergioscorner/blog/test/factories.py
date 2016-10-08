@@ -10,6 +10,8 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 
     name = factory.Sequence(lambda n: 'Category %s' % n)
     slug = factory.Sequence(lambda n: 'category-slug-%s' % n)
+    title_tag = factory.Sequence(lambda n: 'Category title %s' % n)
+    description_tag = factory.Sequence(lambda n: 'Category description %s' % n)
 
 
 class ArticleFactory(factory.django.DjangoModelFactory):
@@ -21,3 +23,5 @@ class ArticleFactory(factory.django.DjangoModelFactory):
     introduction = factory.Sequence(lambda n: '<p>Introduction %s</p>' % n)
     text = factory.Sequence(lambda n: '<p>Text %s</p>' % n)
     slug = factory.Sequence(lambda n: 'article-slug-%s' % n)
+    title_tag = factory.Sequence(lambda n: 'Article title %s' % n)
+    description_tag = factory.Sequence(lambda n: 'Article description %s' % n)

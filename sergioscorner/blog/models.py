@@ -3,8 +3,10 @@ import datetime
 from django.db import models
 from django.core.exceptions import ValidationError
 
+from utils.seo import SEOModel
 
-class Category (models.Model):
+
+class Category (SEOModel):
     """Category of an article"""
     name = models.CharField(
         'Name',
@@ -18,13 +20,9 @@ class Category (models.Model):
 
     def clean_fields(self, exclude=None):
         self.slug = self.slug.lower()
-        if self.slug in ('category',):
-            raise ValidationError(
-                {'slug': 'Must be different than "category"'}
-            )
 
 
-class Article (models.Model):
+class Article (SEOModel):
     """An article is divided in 3 part.
     1- The title.
     2- An introduction of the article. It is used for summaries and is the
@@ -63,7 +61,3 @@ class Article (models.Model):
 
     def clean_fields(self, exclude=None):
         self.slug = self.slug.lower()
-        if self.slug in ('category',):
-            raise ValidationError(
-                {'slug': 'Must be different than "category"'}
-            )

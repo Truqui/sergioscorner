@@ -13,6 +13,15 @@ class AllArticlesListViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'test')
 
+    def test_all_article_list_has_title_and_description_tags(self):
+        response = self.client.get(reverse('all-articles'),)
+
+        self.assertContains(response, '<title>Sergio\'s Corner | Home</title>')
+        self.assertContains(
+            response,
+            '<meta name="description" content="Personal space '
+        )
+
 
 class CategoryArticlesListViewTest(TestCase):
 
@@ -22,7 +31,7 @@ class CategoryArticlesListViewTest(TestCase):
         article.categories.add(category)
 
         response = self.client.get(
-            reverse('category', kwargs={'category': category.name}),
+            reverse('category', kwargs={'category_slug': category.slug}),
         )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'test')
@@ -32,21 +41,36 @@ class CategoryArticlesListViewTest(TestCase):
         article = ArticleFactory(title='test', slug='test')
 
         response = self.client.get(
-            reverse('category', kwargs={'category': category.name}),
+            reverse('category', kwargs={'category_slug': category.slug}),
         )
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, article.title)
 
     def test_raise_404_if_category_not_exist(self):
         response = self.client.get(
-            reverse('category', kwargs={'category': 'not-exist'}),
+            reverse('category', kwargs={'category_slug': 'not-exist'}),
         )
         self.assertEqual(response.status_code, 404)
 
+    def test_category_has_title_and_description_tags(self):
+        category = CategoryFactory(name='category', slug='category')
+
+        response = self.client.get(
+            reverse('category', kwargs={'category_slug': category.slug}),
+        )
+        self.assertContains(
+            response,
+            '<title>Sergio\'s Corner | ' + category.title_tag + '</title>'
+        )
+        self.assertContains(
+            response,
+            '<meta name="description" content="' +
+            category.description_tag + '"'
+        )
+
 
 class ArticleDetailsViewTest(TestCase):
-
-    def test_article_go(self):
+    def test_article_works(self):
         ArticleFactory(title='test', slug='test')
 
         response = self.client.get(
@@ -54,3 +78,19 @@ class ArticleDetailsViewTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'test')
+
+    def test_article_has_title_and_description_tags(self):
+        article = ArticleFactory(title='test', slug='test')
+
+        response = self.client.get(
+            reverse('article', kwargs={'slug': article.slug}),
+        )
+        self.assertContains(
+            response,
+            '<title>Sergio\'s Corner | ' + article.title_tag + '</title>'
+        )
+        self.assertContains(
+            response,
+            '<meta name="description" content="' +
+            article.description_tag + '"'
+        )
