@@ -3,9 +3,9 @@
 {% block content %}
 	{% for article in object_list %}
 		<article>
-			<h1><a href="/{{ article.slug }}">{{ article.title }}</a></h1>
+			<h1><a href="/article/{{ article.slug }}">{{ article.title }}</a></h1>
 			{{ article.introduction|safe }}
-			<p class='readmore'><a href="/{{ article.slug }}">Read more</a><p>
+			<p class='readmore'><a href="/article/{{ article.slug }}">Read more</a><p>
 			<footer>
 				<p>
 					Published on {{ article.creation_date }} 

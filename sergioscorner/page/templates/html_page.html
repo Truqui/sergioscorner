@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{{ html|safe }}
+	<article>
+		{{ object.html|safe }}
+	</article>	
 {% endblock %}

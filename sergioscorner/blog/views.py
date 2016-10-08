@@ -25,7 +25,9 @@ class CategoryArticlesListView(ListView):
 
     def get_queryset(self):
         try:
-            self.category = Category.objects.get(slug=self.kwargs['category'])
+            self.category = Category.objects.get(
+                slug=self.kwargs['category_slug']
+            )
         except ObjectDoesNotExist:
             raise Http404('Category does not exist')
 

@@ -31,7 +31,7 @@ class CategoryArticlesListViewTest(TestCase):
         article.categories.add(category)
 
         response = self.client.get(
-            reverse('category', kwargs={'category': category.name}),
+            reverse('category', kwargs={'category_slug': category.slug}),
         )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'test')
@@ -41,14 +41,14 @@ class CategoryArticlesListViewTest(TestCase):
         article = ArticleFactory(title='test', slug='test')
 
         response = self.client.get(
-            reverse('category', kwargs={'category': category.name}),
+            reverse('category', kwargs={'category_slug': category.slug}),
         )
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, article.title)
 
     def test_raise_404_if_category_not_exist(self):
         response = self.client.get(
-            reverse('category', kwargs={'category': 'not-exist'}),
+            reverse('category', kwargs={'category_slug': 'not-exist'}),
         )
         self.assertEqual(response.status_code, 404)
 
@@ -56,7 +56,7 @@ class CategoryArticlesListViewTest(TestCase):
         category = CategoryFactory(name='category', slug='category')
 
         response = self.client.get(
-            reverse('category', kwargs={'category': category.slug}),
+            reverse('category', kwargs={'category_slug': category.slug}),
         )
         self.assertContains(
             response,
@@ -70,7 +70,7 @@ class CategoryArticlesListViewTest(TestCase):
 
 
 class ArticleDetailsViewTest(TestCase):
-    def test_article_work(self):
+    def test_article_works(self):
         ArticleFactory(title='test', slug='test')
 
         response = self.client.get(

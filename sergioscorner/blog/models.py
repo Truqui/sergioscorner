@@ -18,12 +18,8 @@ class Category (SEOModel):
     def __str__(self):
         return self.name
 
-    def clean_fields(self):
+    def clean_fields(self, exclude=None):
         self.slug = self.slug.lower()
-        if self.slug in ('category',):
-            raise ValidationError(
-                {'slug': 'Must be different than "category"'}
-            )
 
 
 class Article (SEOModel):
@@ -63,9 +59,5 @@ class Article (SEOModel):
             return True
         return False
 
-    def clean_fields(self):
+    def clean_fields(self, exclude=None):
         self.slug = self.slug.lower()
-        if self.slug in ('category',):
-            raise ValidationError(
-                {'slug': 'Must be different than "category"'}
-            )

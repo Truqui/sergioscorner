@@ -4,6 +4,6 @@ from .models import HtmlPage
 
 
 class HtmlPageAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(HtmlPage, HtmlPageAdmin)
