@@ -14,10 +14,14 @@
 		<link href="/static/css/style.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
-
-				<header>
-					{% sitetree_menu from "mainmenu" include "trunk,topmenu" %}
-				</header>	
+		<header>
+			<div class="container-fluid">
+				<div class="row banner">
+					<img class="img-responsive center-block" src="/static/img/banner.jpg" alt="banner">
+				</div>
+			</div>
+			{% sitetree_menu from "mainmenu" include "trunk,topmenu" %}
+		</header>	
 
 		<div class="container">
 			<div class="row">
