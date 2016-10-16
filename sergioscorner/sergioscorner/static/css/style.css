@@ -28,14 +28,22 @@ article footer p {
 
 
 /* CUSTOM NAVBAR */
+
 ul.navbar-nav {
     width: 100%;
     text-align: center;
 }
 
-.navbar-nav li {
-	float: none;
-    display: inline-block;
+@media (min-width: 767px) {
+	.navbar-nav li {
+		float: none;
+	    display: inline-block;
+	}
+}
+
+ul.dropdown-menu li {
+	display: block;
+	text-align: center;
 }
 
 .navbar-nav li .dropdown-menu {
