@@ -50,6 +50,11 @@ ul.dropdown-menu li {
 	border-bottom-color: #FE9A2E;
 }
 
+li.logo-navbar a {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
 /* HEADER */
 div.banner {
 	background-color: #333;
@@ -58,6 +63,30 @@ div.banner {
 	border-top-color: #FE9A2E;
 }
 
+/* FOOTER */
+footer {
+	margin-top: 20px;
+}
+
+div.footer {
+	background-color: #333;
+	border-top-style: solid;
+    border-top-width: 1px;
+	border-top-color: #FE9A2E;
+	border-bottom-style: solid;
+    border-bottom-width: 1px;
+	border-bottom-color: #FE9A2E;
+}
+
+div.footer p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+img.logo-footer {
+	padding-left: 5px;
+	padding-right: 5px;
+}
 
 /* NAVBAR GENERATOR */
 .navbar-default {
