@@ -14,23 +14,43 @@
 		<link href="/static/css/style.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
-
-				<header>
-					{% sitetree_menu from "mainmenu" include "trunk,topmenu" %}
-				</header>	
+		<header>
+			<div class="container-fluid">
+				<div class="row banner">
+					<div class="col-md-12">
+						<img class="img-responsive center-block" src="/static/img/banner.jpg" alt="banner">
+					</div>
+				</div>
+			</div>
+			{% sitetree_menu from "mainmenu" include "trunk,topmenu" %}
+		</header>	
 
 		<div class="container">
 			<div class="row">
-				<section>
-					{% block content %}{% endblock %}
-				</section>
-			</div>
-			<footer>
-				<div class="row">
-					<p>Sergio's Corner</p>
+				<div class="col-md-12">
+					<section>
+						{% block content %}{% endblock %}
+					</section>
 				</div>
-			</footer>
+			</div>
 		</div>
+		<footer>
+			<div class="container-fluid">
+				<div class="row footer">
+					<div class="col-md-12">
+						<p class="text-center">Sergio's Corner</p>
+						<p class="text-center">
+							<a target="_blank" href="https://github.com/Truqui">
+								<img class="logo-footer" src="/static/img/github.png" alt="github account">
+	            			</a>
+	            			<a target="_blank" href="https://www.linkedin.com/in/sergio-gonzalez-cruz-a52a311a">
+								<img class="logo-footer" src="/static/img/linkedin.png" alt="linkedin account">
+	            			</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 		{% comment %}Adding JavaScripts{% endcomment %}
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
