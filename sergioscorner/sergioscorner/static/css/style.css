@@ -13,6 +13,29 @@ section {
     padding: 10px 40px 25px 40px;
 }
 
+@font-face {
+    font-family: 'SergiosCorner';
+    src: url('../static/fonts/SergiosCorner.ttf');
+}
+
+@font-face {
+    font-family: 'Metropolis-Regular';
+    src: url('../static/fonts/Metropolis-Regular.otf');
+}
+
+h1 {
+	font-family: SergiosCorner;
+	font-size: 3.6em;
+	color: #FE9A2E;
+}
+
+h1 a, h1 a:hover {
+	color: #FE9A2E;
+}
+
+p {
+	font-family: Metropolis;
+}
 
 /* ARTICLES */
 article p.readmore {
@@ -53,6 +76,10 @@ ul.dropdown-menu li {
 li.logo-navbar a {
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.navbar-default .navbar-nav li a {
+	font-family: Metropolis;
 }
 
 /* HEADER */
