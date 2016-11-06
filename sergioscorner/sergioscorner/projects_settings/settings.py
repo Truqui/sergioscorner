@@ -25,6 +25,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'sitetree',
+    'hitcount',
 )
 
 CUSTOM_APPS = (

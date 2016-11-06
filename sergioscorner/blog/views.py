@@ -1,7 +1,8 @@
 from django.views.generic.list import ListView
 from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
-from django.views.generic.detail import DetailView
+
+from hitcount.views import HitCountDetailView
 
 from .models import Article, Category
 
@@ -44,9 +45,10 @@ class CategoryArticlesListView(ListView):
         return context
 
 
-class ArticleDetailsView(DetailView):
+class ArticleDetailsView(HitCountDetailView):
     model = Article
     template_name = 'article.html'
+    count_hit = True
 
     def get_context_data(self, **kwargs):
         context = super(ArticleDetailsView, self).get_context_data(**kwargs)

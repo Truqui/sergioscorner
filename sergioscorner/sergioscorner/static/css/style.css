@@ -1,4 +1,14 @@
 /* BASICS */
+@font-face {
+    font-family: 'SergiosCorner-Regular';
+    src: url('../static/fonts/SergiosCorner.ttf');
+}
+
+@font-face {
+    font-family: 'Metropolis-Regular';
+    src: url('../static/fonts/Metropolis-Regular.otf');
+}
+
 body {
     background-color: #555;
     color: #EEE;
@@ -11,16 +21,6 @@ section {
     border-width: 1px;
     border-color: #FE9A2E;
     padding: 10px 40px 25px 40px;
-}
-
-@font-face {
-    font-family: 'SergiosCorner';
-    src: url('../static/fonts/SergiosCorner.ttf');
-}
-
-@font-face {
-    font-family: 'Metropolis-Regular';
-    src: url('../static/fonts/Metropolis-Regular.otf');
 }
 
 h1 {
