@@ -9,3 +9,5 @@ factory_boy==2.7.0
 
 # Others
 django-sitetree==1.6.0
+django-hitcount==1.2.2
+
