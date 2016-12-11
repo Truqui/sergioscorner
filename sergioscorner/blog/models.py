@@ -31,7 +31,7 @@ class Article (SEOModel):
     """
     title = models.CharField(
         'Title',
-        max_length=50,
+        max_length=150,
         unique=True
     )
     introduction = models.TextField(

@@ -1,12 +1,12 @@
 /* BASICS */
 @font-face {
-    font-family: 'SergiosCorner-Regular';
-    src: url('../static/fonts/SergiosCorner.ttf');
+    font-family: 'SergiosCorner';
+    src: url('/static/fonts/SergiosCorner.ttf');
 }
 
 @font-face {
-    font-family: 'Metropolis-Regular';
-    src: url('../static/fonts/Metropolis-Regular.otf');
+    font-family: 'Metropolis';
+    src: url('/static/fonts/Metropolis-Regular.otf');
 }
 
 body {
@@ -29,6 +29,13 @@ h1 {
 	color: #FE9A2E;
 }
 
+h2 {
+	font-family: SergiosCorner;
+	font-size: 2.5em;
+	color: #FE9A2E;
+}
+
+
 h1 a, h1 a:hover {
 	color: #FE9A2E;
 }
@@ -49,6 +56,9 @@ article footer p {
 	padding-bottom: 5px;
 }
 
+section {
+	margin-bottom: 100px;
+}
 
 /* CUSTOM NAVBAR */
 
