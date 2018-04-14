@@ -92,6 +92,8 @@ ENV/
 .project
 .pydevproject
 
+# Pycharms
+.idea
+
 # Secret settings
 sergioscorner/sergioscorner/projects_settings/secret.py
-
