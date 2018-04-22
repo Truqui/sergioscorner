@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Truqui/sergioscorner.svg?branch=master)](https://travis-ci.org/Truqui/sergioscorner)
 # sergioscorner
 SergiosCorner is a Django project for develop my personal blog. 
 
