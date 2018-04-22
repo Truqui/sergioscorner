@@ -18,7 +18,7 @@ env:
   - DJANGO=1.10.4
 
 before_install:
-  - export DJANGO_SETTINGS_MODULE=sergioscorner.sergioscorner.sergioscorner.settings
+  - export DJANGO_SETTINGS_MODULE=sergioscorner.settings
   - export PYTHONPATH=$HOME/builds/Truqui/sergioscorner/sergioscorner
   - export PIP_USE_MIRRORS=true
 
