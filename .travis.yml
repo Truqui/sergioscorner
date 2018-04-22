@@ -27,11 +27,11 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
-  - ls sergioscorner
-  - python sergioscorner/manage.py migrate
+  - cd sergioscorner
+  - python manage.py migrate
 
 script:
-  - python sergioscorner/manage.py test
+  - python manage.py test
 
 notifications:
   email:
