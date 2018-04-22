@@ -1,0 +1,40 @@
+#   A basic travis.yml boilerplate for Django projects
+#
+#   The set-up assumes a postgreSQL database.
+#
+#   Replace the following variables in the code:
+# * your_project_settings
+# * your_github_username
+# * your_repo
+
+language: python
+
+python:
+  - 3.5
+
+services: postgresql
+
+env:
+  - DJANGO=1.10.4
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE=sergioscorner.sergioscorner.settings
+  - export PYTHONPATH=$HOME/builds/Truqui/sergioscorner
+  - export PIP_USE_MIRRORS=true
+
+install:
+  - pip install -r deployment/requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE travisci;" -U postgres
+  - python sergioscorner/manage.py migrate
+
+script:
+  - python sergioscorner/manage.py test
+
+notifications:
+  email:
+    recipients:
+      - gonzalezcruz.sergio@gmail.com
+    on_success: never
+    on_failure: always
