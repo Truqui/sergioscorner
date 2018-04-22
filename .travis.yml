@@ -18,7 +18,7 @@ env:
   - DJANGO=1.10.4
 
 before_install:
-  - export DJANGO_SETTINGS_MODULE=sergioscorner.sergioscorner.settings
+  - export DJANGO_SETTINGS_MODULE=sergioscorner.sergioscorner.sergioscorner.settings
   - export PYTHONPATH=$HOME/builds/Truqui/sergioscorner
   - export PIP_USE_MIRRORS=true
 
@@ -27,11 +27,10 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
-  - cd sergioscorner
-  - python manage.py migrate
+  - python sergioscorner/manage.py migrate
 
 script:
-  - python manage.py test
+  - python sergioscorner/manage.py test
 
 notifications:
   email:

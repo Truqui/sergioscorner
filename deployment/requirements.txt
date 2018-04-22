@@ -3,6 +3,7 @@ Django==1.10.4
 
 # Database
 psycopg2==2.7.4
+psycopg2-binary==2.7.4
 
 # Test
 factory_boy==2.7.0
@@ -10,4 +11,3 @@ factory_boy==2.7.0
 # Others
 django-sitetree==1.6.0
 django-hitcount==1.2.2
-
