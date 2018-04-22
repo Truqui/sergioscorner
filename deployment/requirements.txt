@@ -2,7 +2,7 @@
 Django==1.10.4
 
 # Database
-psycopg2==2.6.2
+psycopg2==2.7.4
 
 # Test
 factory_boy==2.7.0
