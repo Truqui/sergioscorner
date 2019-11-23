@@ -97,3 +97,6 @@ ENV/
 
 # Secret settings
 sergioscorner/sergioscorner/projects_settings/secret.py
+
+# SQLite3
+sergioscorner/sergioscorner/db.sqlite3
