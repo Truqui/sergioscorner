@@ -1,7 +1,6 @@
 import datetime
 
 from django.db import models
-from django.core.exceptions import ValidationError
 
 from utils.seo import SEOModel
 
