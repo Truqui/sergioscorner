@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import re_path
+from django.urls import re_path, include
 
 from blog.views import AllArticlesListView, CategoryArticlesListView,\
     ArticleDetailsView
@@ -20,4 +20,5 @@ urlpatterns = [
         ArticleDetailsView.as_view(),
         name="article"
     ),
+    re_path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
