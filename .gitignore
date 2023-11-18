@@ -96,7 +96,5 @@ ENV/
 .idea
 
 # Secret settings
-sergioscorner/sergioscorner/projects_settings/secret.py
+sergioscorner/projects_settings/secret.py
 
-# SQLite3
-sergioscorner/sergioscorner/db.sqlite3
