@@ -14,7 +14,7 @@ class Page (SEOModel):
         max_length=50,
         unique=True
     )
-    content = RichTextField(
+    content = models.TextField(
         blank=True,
         help_text='HTML Code'
     )
