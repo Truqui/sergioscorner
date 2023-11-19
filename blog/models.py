@@ -37,7 +37,7 @@ class Article (SEOModel):
         blank=True,
         help_text='First part of the final article. In HTML code.'
     )
-    text = models.TextField(
+    content = models.TextField(
         blank=True,
         help_text='Second part of the final article. In HTML code.'
     )

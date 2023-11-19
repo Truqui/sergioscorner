@@ -35,6 +35,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'sitetree',
     'hitcount',
+    'ckeditor',
 )
 
 CUSTOM_APPS = (

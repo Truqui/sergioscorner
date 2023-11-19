@@ -17,11 +17,11 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 class ArticleFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Article
-        django_get_or_create = ('title', 'introduction', 'text',)
+        django_get_or_create = ('title', 'introduction', 'content',)
 
     title = factory.Sequence(lambda n: 'Article %s' % n)
     introduction = factory.Sequence(lambda n: '<p>Introduction %s</p>' % n)
-    text = factory.Sequence(lambda n: '<p>Text %s</p>' % n)
+    content = factory.Sequence(lambda n: '<p>Content %s</p>' % n)
     slug = factory.Sequence(lambda n: 'article-slug-%s' % n)
     title_tag = factory.Sequence(lambda n: 'Article title %s' % n)
     description_tag = factory.Sequence(lambda n: 'Article description %s' % n)

@@ -1,18 +1,18 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 
-from .factories import HtmlPageFactory
-from ..models import HtmlPage
+from .factories import PageFactory
+from ..models import Page
 
 
-class HtmlPageModelTest(TestCase):
+class PageModelTest(TestCase):
 
-    def test_html_page_creation(self):
-        html_page = HtmlPageFactory()
-        self.assertTrue(isinstance(html_page, HtmlPage))
-        self.assertEqual(str(html_page), html_page.name)
+    def test_page_creation(self):
+        page = PageFactory()
+        self.assertTrue(isinstance(page, Page))
+        self.assertEqual(str(page), page.name)
 
-    def test_html_page_slug_cant_be_category(self):
-        html_page = HtmlPageFactory(slug='category')
+    def test_page_slug_cant_be_category(self):
+        page = PageFactory(slug='category')
         with self.assertRaises(ValidationError):
-            html_page.clean_fields()
+            page.clean_fields()

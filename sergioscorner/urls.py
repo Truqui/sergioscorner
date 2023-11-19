@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import re_path
+from django.urls import re_path, include
 
 from blog.views import AllArticlesListView, CategoryArticlesListView,\
     ArticleDetailsView
@@ -19,5 +19,5 @@ urlpatterns = [
         r'^article/(?P<slug>[\w|-]+)/$',
         ArticleDetailsView.as_view(),
         name="article"
-    ),
+    )
 ]
