@@ -19,6 +19,5 @@ urlpatterns = [
         r'^article/(?P<slug>[\w|-]+)/$',
         ArticleDetailsView.as_view(),
         name="article"
-    ),
-    re_path('ckeditor/', include('ckeditor_uploader.urls')),
+    )
 ]
